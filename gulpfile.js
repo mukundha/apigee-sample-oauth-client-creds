@@ -8,7 +8,7 @@ var PROXY_NAME = 'apigee-sample-oauth-client-credentials'
 var DEVELOPER_EMAIL = 'test123@apigeeseed.com'
 var PRODUCT_NAME = 'apigee-sample-oauth-product'
 var APP_NAME = 'seed-sample-oauth'
-
+var SAMPLE_NAME = 'oauth-client-credentials'
 gulp.task('default', function() {
   // place code for your default task here
 });
@@ -47,7 +47,7 @@ gulp.task('deploy',function(){
 			  	opts.client_id=app.credentials[0].consumerKey
 			  	opts.client_secret=app.credentials[0].consumerSecret			  	
 			  	opts.appName = opts.name
-			  	opts.sample = PROXY_NAME
+			  	opts.sample = SAMPLE_NAME
 			  	delete opts.name		  	
 			  	delete opts.token
 			  	return seedsdk.storeTestData(opts)
