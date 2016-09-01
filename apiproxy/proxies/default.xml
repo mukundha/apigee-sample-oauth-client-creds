@@ -1,5 +1,17 @@
 <ProxyEndpoint name="default">
-  
+  <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Condition>request.verb='OPTIONS'</Condition>
+                <Name>CORS</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Name>SetCORS</Name>
+            </Step>
+        </Response>
+    </PreFlow>
   <Flows>
     <Flow name="GetAccessToken">
       <!-- This policy flow is selected when the path exactly matches what's below -->
